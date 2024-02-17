@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-02-17T15:33:27.363Z",
+    "end": "2024-02-17T15:33:27.499Z",
+    "duration": 136,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "4dc88e08-ba88-4330-8f46-78ae47ae6ea6",
+      "title": "",
+      "fullFile": "cypress/e2e/pageObjectsTests/bankTestsUsingPOM.cy.js",
+      "file": "cypress/e2e/pageObjectsTests/bankTestsUsingPOM.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3bea6892-3d84-4dad-bdf9-ba75f30a74dd",
+          "title": "POM test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check if basic elements are displayed",
+              "fullTitle": "POM test Check if basic elements are displayed",
+              "timedOut": null,
+              "duration": 110,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/pageObjectsTests/bankTestsUsingPOM.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/bankTestsUsingPOM.cy.js/Check if basic elements are displayed -- before each hook (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "loginPage.verifyIfBasicElementsAreDisplayed(); //here we are calling out method that is located in LoginPage class",
+              "err": {
+                "message": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.",
+                "estack": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at Context.visit (http://localhost:56727/__cypress/runner/cypress_runner.js:130597:70)\n    at wrapped (http://localhost:56727/__cypress/runner/cypress_runner.js:138282:43)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/pageObjectsTests/bankTestsUsingPOM.cy.js:11:5)",
+                "diff": null
+              },
+              "uuid": "58e2648d-4d32-4de5-8064-a4197538fb3f",
+              "parentUUID": "3bea6892-3d84-4dad-bdf9-ba75f30a74dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Log into bank account using hardcoded data",
+              "fullTitle": "POM test Log into bank account using hardcoded data",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillCredentialsData('username', 'password'); // those are hardcoded values\nloginPage.clickSignInButton();\nmainPage.verifyIfBasicElementsAreDisplayed(); //as you can see it's the same name of the method as ^, but it's from a different class, so it does something different",
+              "err": {},
+              "uuid": "f0434cc4-f98c-4ec9-8319-b1440736dcf7",
+              "parentUUID": "3bea6892-3d84-4dad-bdf9-ba75f30a74dd",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Log into bank account using parsed data",
+              "fullTitle": "POM test Log into bank account using parsed data",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('credentials').then(loginData => {\n  loginPage.fillCredentialsData('username', 'password'); // those are hardcoded values\n  loginPage.clickSignInButton();\n  loginPage.verifyIfBasicElementsAreDisplayed();\n});",
+              "err": {},
+              "uuid": "5cad766e-5c6a-4722-875f-b45758e1bf3d",
+              "parentUUID": "3bea6892-3d84-4dad-bdf9-ba75f30a74dd",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "58e2648d-4d32-4de5-8064-a4197538fb3f"
+          ],
+          "pending": [],
+          "skipped": [
+            "f0434cc4-f98c-4ec9-8319-b1440736dcf7",
+            "5cad766e-5c6a-4722-875f-b45758e1bf3d"
+          ],
+          "duration": 110,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
